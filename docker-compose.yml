@@ -11,8 +11,6 @@ master:
   privileged: true
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-  ports:
-    - "8080:8080"
   command: /hyperkube kubelet --containerized --hostname-override="127.0.0.1" --address="0.0.0.0" --api-servers=http://localhost:8080 --config=/etc/kubernetes/manifests
 
 proxy:
